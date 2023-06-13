@@ -19,12 +19,16 @@ function getAndSetMadLibValues() {
 }
 
 
-
-window.onload = function () {
+function setForSubmissionEventHandler() {
   let form = document.querySelector("form");
-  form.onsubmit = function (e) {
+  form.onsubmit = funtion(e) {
     e.preventDefault();
     getAndSetMadLibValues();
     document.querySelector("div#story").removeAttribute("class");
-  };
+  }
+}
+
+
+window.onload = function () {
+  setForSubmissionEventHandler();
 };
