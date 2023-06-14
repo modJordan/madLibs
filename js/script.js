@@ -21,14 +21,24 @@ function getAndSetMadLibValues() {
 
 function setForSubmissionEventHandler() {
   let form = document.querySelector("form");
-  form.onsubmit = funtion(e) {
+  form.onsubmit = function (e) {
     e.preventDefault();
     getAndSetMadLibValues();
     document.querySelector("div#story").removeAttribute("class");
-  }
+  };
+}
+
+function clearResetButton() {
+  let story = document.getElementById("clearStory");
+  story.addEventListener("reset", function (e) {
+    document.querySelector("div#story").addAttribute("class");
+    console.log("clearResetButton is executing")
+  )
+};
 }
 
 
 window.onload = function () {
   setForSubmissionEventHandler();
+
 };
